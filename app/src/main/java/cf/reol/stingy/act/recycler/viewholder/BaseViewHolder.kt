@@ -7,7 +7,7 @@ import android.view.View
 /**
  * Created by reol on 2017/8/28.
  */
-open abstract class BaseViewHolder<T>(itemView: View?, private val mViews: SparseArray<View> = SparseArray()) : RecyclerView.ViewHolder(itemView) {
+abstract class BaseViewHolder<in T>(itemView: View?, private val mViews: SparseArray<View> = SparseArray()) : RecyclerView.ViewHolder(itemView) {
 
     var mItem = itemView
 
