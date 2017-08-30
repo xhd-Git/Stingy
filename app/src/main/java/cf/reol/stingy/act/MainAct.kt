@@ -11,6 +11,9 @@ import cf.reol.stingy.act.recycler.MultyItemAdapter
 import cf.reol.stingy.act.recycler.Visitable
 import cf.reol.stingy.act.recycler.item.AccountingItem
 import cf.reol.stingy.act.recycler.item.DividerItem
+import cf.reol.stingy.act.recycler.item.MemoItem
+import cf.reol.stingy.act.recycler.item.TimeStampItem
+import cf.reol.stingy.utils.Logger
 import kotlinx.android.synthetic.main.act_main.*
 import kotlinx.android.synthetic.main.content_act_main.*
 
@@ -31,14 +34,11 @@ class MainAct : AppCompatActivity() {
         data.add(AccountingItem(Color.BLACK,Color.RED,"外卖","南城香满40-20","22.8"))
         data.add(DividerItem(Color.GRAY))
         data.add(AccountingItem(Color.BLACK,Color.RED,"外卖","田老师40-20","21.8"))
-        data.add(DividerItem(Color.GRAY))
-        data.add(AccountingItem(Color.BLACK,Color.RED,"外卖","南城香满40-20","22.8"))
-        data.add(DividerItem(Color.GRAY))
+        data.add(TimeStampItem(System.currentTimeMillis()))
         data.add(AccountingItem(Color.BLACK,Color.RED,"超市","啥玩意啊","28"))
-        data.add(AccountingItem(Color.BLACK,Color.RED,"超市","啥玩意啊","28"))
+        data.add(MemoItem("备忘记录", 1504182660000L))
         data.add(DividerItem(Color.GRAY))
 
-        Log.d("asdfg", data.toString())
         val adapter = MultyItemAdapter(data, this)
         rvMain.layoutManager = LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false)
         rvMain.adapter = adapter

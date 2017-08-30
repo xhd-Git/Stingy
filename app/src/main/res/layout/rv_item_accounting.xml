@@ -6,7 +6,7 @@
     android:layout_height="100dp">
 
     <View
-        android:id="@+id/rv_acc_icon_left"
+        android:id="@+id/rv_memo_icon_left"
         android:layout_width="15dp"
         android:layout_height="40dp"
         android:layout_marginBottom="0dp"
@@ -19,7 +19,7 @@
         app:layout_constraintVertical_bias="0.501" />
 
     <View
-        android:id="@+id/rv_acc_icon_right"
+        android:id="@+id/rv_memo_icon_right"
         android:layout_width="15dp"
         android:layout_height="40dp"
         android:layout_marginBottom="0dp"
@@ -27,7 +27,7 @@
         android:layout_marginTop="0dp"
         android:background="@color/colorAccent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/rv_acc_icon_left"
+        app:layout_constraintLeft_toRightOf="@+id/rv_memo_icon_left"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.501" />
 
@@ -41,8 +41,8 @@
         android:textColor="?android:attr/textColorPrimary"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintLeft_toRightOf="@+id/rv_acc_icon_right"
-        app:layout_constraintTop_toTopOf="@+id/rv_acc_icon_right" />
+        app:layout_constraintLeft_toRightOf="@+id/rv_memo_icon_right"
+        app:layout_constraintTop_toTopOf="@+id/rv_memo_icon_right" />
 
     <TextView
         android:id="@+id/rv_acc_tv_description"
@@ -52,8 +52,8 @@
         android:layout_marginLeft="16dp"
         android:text="迟到的田老师"
         android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@+id/rv_acc_icon_right"
-        app:layout_constraintLeft_toRightOf="@+id/rv_acc_icon_right" />
+        app:layout_constraintBottom_toBottomOf="@+id/rv_memo_icon_right"
+        app:layout_constraintLeft_toRightOf="@+id/rv_memo_icon_right" />
 
     <TextView
         android:id="@+id/rv_acc_tv_money"
