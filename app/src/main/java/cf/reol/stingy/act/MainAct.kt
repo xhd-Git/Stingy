@@ -18,30 +18,37 @@ import kotlinx.android.synthetic.main.act_main.*
 import kotlinx.android.synthetic.main.content_act_main.*
 
 class MainAct : AppCompatActivity() {
+    val data = ArrayList<Visitable>(10)
+    private val adapter = MultyItemAdapter(data, this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.act_main)
         setSupportActionBar(toolbar)
 
-        fab.setOnClickListener { Snackbar.make(it,"SnackBar",Snackbar.LENGTH_SHORT).show() }
+        fab.setOnClickListener {
+            data.add(0,DividerItem(Color.RED))
+            data.add(0,MemoItem("备忘记录", 1504182660000L))
+            adapter.notifyDataSetChanged()
+            rvMain.smoothScrollToPosition(0)
+        }
 
         makeList()
     }
 
     private fun makeList() {
-        val data = ArrayList<Visitable>(10)
-        data.add(AccountingItem(Color.BLACK,Color.RED,"外卖","南城香满40-20","22.8"))
+
+        data.add(AccountingItem(Color.BLACK, Color.RED, "外卖", "南城香满40-20", "22.8"))
         data.add(DividerItem(Color.GRAY))
-        data.add(AccountingItem(Color.BLACK,Color.RED,"外卖","田老师40-20","21.8"))
+        data.add(AccountingItem(Color.BLACK, Color.RED, "外卖", "田老师40-20", "21.8"))
         data.add(TimeStampItem(System.currentTimeMillis()))
-        data.add(AccountingItem(Color.BLACK,Color.RED,"超市","啥玩意啊","28"))
+        data.add(AccountingItem(Color.BLACK, Color.RED, "超市", "啥玩意啊", "28"))
         data.add(MemoItem("备忘记录", 1504182660000L))
         data.add(DividerItem(Color.GRAY))
 
-        val adapter = MultyItemAdapter(data, this)
-        rvMain.layoutManager = LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false)
+        rvMain.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         rvMain.adapter = adapter
+        adapter.notifyDataSetChanged()
     }
 
 
