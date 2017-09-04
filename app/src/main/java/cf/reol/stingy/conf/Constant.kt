@@ -6,5 +6,6 @@ package cf.reol.stingy.conf
 class Constant {
     companion object {
         val TEST: String = "test"
+        val INDEX: String = "index"
     }
 }
