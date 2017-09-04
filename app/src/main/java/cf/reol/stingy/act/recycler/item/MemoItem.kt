@@ -1,12 +1,11 @@
 package cf.reol.stingy.act.recycler.item
 
 import cf.reol.stingy.act.recycler.TypeFactory
-import cf.reol.stingy.act.recycler.Visitable
 
-/**
+/** 备忘事件记录
  * Created by reol on 2017/8/30.
  */
-class MemoItem(val title: String, val timeStamp: Long) : Visitable {
+class MemoItem(val title: String, timeStamp: Long, val description: String) : Visitable {
     var status: String = ""
     init {
         val seconds: Int = ((timeStamp - System.currentTimeMillis()) / 1000).toInt()

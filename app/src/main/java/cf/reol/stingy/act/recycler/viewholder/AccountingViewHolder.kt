@@ -19,7 +19,6 @@ class AccountingViewHolder(itemView: View?, val mContext: Context) : BaseViewHol
     private val tvMoney: TextView = itemView!!.findViewById(R.id.rv_acc_tv_money)
 
     override fun bindViewData(data: AccountingItem, position: Int) {
-        Log.d("asdfg", position.toString())
         leftIcon.setBackgroundColor(data.leftColor)
         rightIcon.setBackgroundColor(data.rightColor)
         tvMain.text = data.title

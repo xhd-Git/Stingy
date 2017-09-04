@@ -2,9 +2,9 @@ package cf.reol.stingy.act.recycler
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import cf.reol.stingy.act.recycler.item.Visitable
 import cf.reol.stingy.act.recycler.viewholder.BaseViewHolder
 
 /**

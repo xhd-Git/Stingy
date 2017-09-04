@@ -21,6 +21,6 @@ class MemoViewHolder(itemView: View?, private val mContext: Context) : BaseViewH
         title.text = data.title
         status.text = data.status
 
-        itemView.setOnClickListener{Toast.makeText(mContext,position.toString(),Toast.LENGTH_SHORT).show()}
+        itemView.setOnClickListener{Toast.makeText(mContext,data.description,Toast.LENGTH_SHORT).show()}
     }
 }
