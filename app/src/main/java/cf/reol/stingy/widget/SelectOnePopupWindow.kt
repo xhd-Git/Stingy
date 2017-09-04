@@ -10,6 +10,7 @@ import cf.reol.stingy.act.recycler.item.AccountingItem
 import cf.reol.stingy.act.recycler.item.MemoItem
 import cf.reol.stingy.act.recycler.item.Visitable
 import cf.reol.stingy.utils.DeviceUtil
+import cf.reol.stingy.utils.SPUtil
 
 /**
  * Created by reol on 2017/9/1.
@@ -56,9 +57,11 @@ class SelectOnePopupWindow(val context: Activity) : PopupWindow(context) {
             if (pw_rg.checkedRadioButtonId == R.id.pw_rb_money){
                 listener.OnClick(it, AccountingItem(description = pw_et_desp.editableText.toString(),title = pw_et_title.editableText.toString(),
                         money = pw_et_money.editableText.toString()))
+                SPUtil.setData(context, pw_et_title.editableText.toString())
             }else{
                 listener.OnClick(it,MemoItem(description = pw_et_desp.editableText.toString(),title = pw_et_title.editableText.toString(),
                         timeStamp = System.currentTimeMillis()))//fixme 获取输入时间戳
+                SPUtil.setData(context, pw_et_title.editableText.toString())
             }
 
             this.dismiss()
