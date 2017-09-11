@@ -1,6 +1,8 @@
 package cf.reol.stingy.utils
 
+import android.app.Activity
 import android.content.Context
+import android.graphics.Color
 import android.widget.Toast
 
 /** 神秘特性 ： 扩展函数集合

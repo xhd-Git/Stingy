@@ -1,29 +1,27 @@
 package cf.reol.stingy.act
 
-import android.app.Activity
-import android.graphics.Color
 import android.os.Bundle
-import android.support.v4.widget.SwipeRefreshLayout
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.view.Gravity
 import android.view.View
-import android.widget.PopupWindow
-import android.widget.Toast
 import cf.reol.stingy.R
 import cf.reol.stingy.act.recycler.MultyItemAdapter
 import cf.reol.stingy.act.recycler.item.Visitable
-import cf.reol.stingy.act.recycler.item.AccountingItem
 import cf.reol.stingy.act.recycler.item.DividerItem
 import cf.reol.stingy.act.recycler.item.MemoItem
 import cf.reol.stingy.act.recycler.item.TimeStampItem
+import cf.reol.stingy.data.DetailData
+import cf.reol.stingy.utils.Logger
 import cf.reol.stingy.utils.SPUtil
 import cf.reol.stingy.utils.toast
 import cf.reol.stingy.widget.SelectOnePopupWindow
+
 import kotlinx.android.synthetic.main.act_main.*
 import kotlinx.android.synthetic.main.content_act_main.*
 
 class MainAct : AppCompatActivity() {
+
     val data = ArrayList<Visitable>(10)
     private val adapter = MultyItemAdapter(data, this)
 
@@ -38,11 +36,6 @@ class MainAct : AppCompatActivity() {
             val pw = SelectOnePopupWindow(this)
             pw.setOnConfirmListener(object : SelectOnePopupWindow.OnConfirmListener{
                 override fun OnClick(view: View, item: Visitable) {
-//                    data.add(0, DividerItem())
-//                    data.add(0, item)
-//                    data.add(0,TimeStampItem())
-//                    adapter.notifyDataSetChanged()
-//                    rvMain.smoothScrollToPosition(0)
                     addItem(item)
                 }
             })
@@ -61,6 +54,12 @@ class MainAct : AppCompatActivity() {
         if (title != "default"){
             addItem(MemoItem(title, System.currentTimeMillis(),""))
         }
+
+        val detail = DetailData("title", "description", 2, 20, System.currentTimeMillis(), "start")
+
+        val detailData = DetailData(title="title", description = "description", money = 20,time = System.currentTimeMillis(), status = "stop", type = 1)
+        Logger.d("asdfg", detailData.type.toString())
+
     }
 
     private fun addItem(item: Visitable){
