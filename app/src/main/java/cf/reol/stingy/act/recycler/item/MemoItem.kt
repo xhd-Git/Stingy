@@ -5,7 +5,7 @@ import cf.reol.stingy.act.recycler.TypeFactory
 /** 备忘事件记录
  * Created by reol on 2017/8/30.
  */
-class MemoItem(val title: String, timeStamp: Long, val description: String) : Visitable {
+class MemoItem(val title: String, var timeStamp: Long, val description: String, val time: Long) : Visitable {
     var status: String = ""
     init {
         val seconds: Int = ((timeStamp - System.currentTimeMillis()) / 1000).toInt()

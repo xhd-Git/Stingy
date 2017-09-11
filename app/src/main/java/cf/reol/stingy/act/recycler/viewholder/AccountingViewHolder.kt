@@ -23,7 +23,7 @@ class AccountingViewHolder(itemView: View?, val mContext: Context) : BaseViewHol
         rightIcon.setBackgroundColor(data.rightColor)
         tvMain.text = data.title
         tvDesp.text = data.description
-        tvMoney.text = data.money
+        tvMoney.text = data.content
     }
 
 }

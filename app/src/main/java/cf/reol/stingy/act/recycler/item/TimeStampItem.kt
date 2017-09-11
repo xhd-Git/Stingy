@@ -6,11 +6,11 @@ import java.util.*
 /**
  * Created by reol on 2017/8/30.
  */
-class TimeStampItem(timeStamp: Long = System.currentTimeMillis()): Visitable {
+class TimeStampItem(time: Long = System.currentTimeMillis()): Visitable {
     private val calendar: Calendar = Calendar.getInstance()
 
     init {
-        calendar.timeInMillis = timeStamp
+        calendar.timeInMillis = time
     }
     val year = calendar.get(Calendar.YEAR)
     val month = calendar.get(Calendar.MONTH)
