@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.view.Gravity
+import android.view.Menu
 import android.view.View
 import cf.reol.stingy.R
 import cf.reol.stingy.act.recycler.MultyItemAdapter
@@ -34,6 +35,14 @@ class MainAct : AppCompatActivity() {
 
         setupData()
 
+        toolbar.setOnMenuItemClickListener {
+            when(it.itemId){
+                R.id.sum -> toast("sum")
+                R.id.memo -> toast("memo only")
+                R.id.accounting -> toast("accounting only")
+            }
+            return@setOnMenuItemClickListener true
+        }
         fab.setOnClickListener {
             val pw = SelectOnePopupWindow(this)
             pw.setOnConfirmListener(object : SelectOnePopupWindow.OnConfirmListener {
@@ -77,6 +86,11 @@ class MainAct : AppCompatActivity() {
         rvMain.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         rvMain.adapter = adapter
         adapter.notifyDataSetChanged()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.toolbar_menu, menu)
+        return true
     }
 
     override fun onDestroy() {
